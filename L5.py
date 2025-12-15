@@ -21,12 +21,21 @@ with open('d2input.txt', 'r') as fl:
 #print(VALUES[1:6])
 
 for rng in RANGE:
-    for i in VALUES:
-        print(type(rng)
-        print(range(rng))
+    print(rng)
+    begin = rng[0]
+    stop = rng[1]
+    range_val = range(begin, stop)
+    for int in VALUES[1:6]:
+        if int in range_val:
+            FRESH += 1
+            print(f" FRESH COUNT: {FRESH}")
+        else:
+            SPOILED += 1
+            print(f" SPOILED COUNT: {SPOILED}")
 
 #print(FRESH)
 #print(SPOILED)
+
 
 
 
