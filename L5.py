@@ -1,47 +1,37 @@
 RANGE = []
 VALUES = []
 
-FRESH = 0
-SPOILED = 0
+def process_ing():
+    FRESH = 0
+    SPOILED = 0
 
-with open('d2input.txt', 'r') as fl:
-    for line in fl:
-        line = line.strip()
-        if '-' in line:
-            start, end = map(int, line.split('-'))
-            RANGE.append((start, end))
-        elif len(line) == 0:
-            pass
-        else:
-            line = int(line)
-            VALUES.append(line)
+    for val in VALUES:
+        is_fresh = False
+        for rng in RANGE:
+            begin = rng[0]
+            stop = rng[1]
+            if begin <= val <= stop:
+                is_fresh = True
+                break
 
-  
-#print(RANGE[:5])
-#print(VALUES[1:6])
-
-for rng in RANGE:
-    print(rng)
-    begin = rng[0]
-    stop = rng[1]
-    range_val = range(begin, stop)
-    for int in VALUES[1:6]:
-        if int in range_val:
+        if is_fresh:
             FRESH += 1
-            print(f" FRESH COUNT: {FRESH}")
+            print(f"Total FRESH ingedients: {FRESH}")
         else:
             SPOILED += 1
-            print(f" SPOILED COUNT: {SPOILED}")
+            print(f"Total SPOILED ingredients: {SPOILED}")
+    print(f"\nFinal Counts: FRESH: {FRESH}, SPOILED: {SPOILED}")
 
-#print(FRESH)
-#print(SPOILED)
+def main():
+    with open('d2input.txt', 'r') as fl:
+        for line in fl:
+            line = line.strip()
+            if '-' in line:
+                start, end = map(int, line.split('-'))
+                RANGE.append((start, end))
+            elif len(line) > 0:
+                VALUES.append(int(line))
+    process_ing()
 
-
-
-
-
-
-#print(RANGE[:5])
-#print('=' * 100)
-#print(VALUES[1:6])
-    
+if __name__ == '__main__':
+    main()
