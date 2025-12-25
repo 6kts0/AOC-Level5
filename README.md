@@ -2,11 +2,11 @@
 
 ## Progress
 
-**Part One: In-progress**
+**Part One: Complete**
   - Determine how many available ingredient IDs are fresh
 
-**Part Two: Not started**
-  - (Awaiting completion of Part One)
+**Part Two: In-progress**
+  - Find How many ingredient IDs are considered to be fresh according to the fresh ingredient ID ranges
 
 ## Problem Summary
 
@@ -14,7 +14,8 @@ A cafeteria inventory system tracks fresh ingredient ID ranges (inclusive, overl
 
 | Part | Task | Answer |
 |------|------|--------|
-| One | Count fresh ingredient IDs from available list | TBD |
+| One | Count fresh ingredient IDs from available list | 821 |
+| Two | Count how many IDs are considered fresh according to the fresh ingredient ID ranges | TBD |
 
 ## Key Challenge
 
